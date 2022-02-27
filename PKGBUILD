@@ -18,16 +18,12 @@ build() {
   deno compile --unstable -A --output pb ./cli/pb/entrypoint.ts
 }
 
-check() {
+package() {
   cd "$pkgname"
 
   ./pollapo
   ./pb
-}
 
-package() {
-  cd "$pkgname"
-
-  install -Dm 755 pollapo "$pkgdir/usr/bin"
-  install -Dm 755 pb "$pkgdir/usr/bin"
+  install -Dm 755 ./pollapo "$pkgdir/usr/bin"
+  install -Dm 755 ./pb "$pkgdir/usr/bin"
 }
