@@ -22,5 +22,4 @@ package() {
   ls -al ${pkgname}
 
   install -dm755 ${pkgname}/pollapo ${pkgdir}/usr/bin
-  mv ${pkgname}/pb ${pkgdir}
 }
