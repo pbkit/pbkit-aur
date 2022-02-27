@@ -28,6 +28,6 @@ check() {
 package() {
   cd "$pkgname"
 
-  mv pollapo "$pkgdir"/usr/bin
-  mv pb "$pkgdir"/usr/bin
+  install -m 755 pollapo "$pkgdir/usr/bin"
+  install -m 755 pb "$pkgdir/usr/bin"
 }
