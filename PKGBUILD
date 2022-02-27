@@ -14,6 +14,8 @@ sha256sums=('SKIP')
 build() {
   cd ${pkgname}
 
+  deno --version
+
   deno compile --unstable -A --output pollapo ./cli/pollapo/entrypoint.ts
   deno compile --unstable -A --output pb ./cli/pb/entrypoint.ts
 }
