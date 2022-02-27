@@ -28,3 +28,7 @@ package() {
 
   ls -l ${pkgdir}/usr/bin/pollapo
 }
+
+check() {
+  ${pkgdir}/usr/bin/pollapo
+}
