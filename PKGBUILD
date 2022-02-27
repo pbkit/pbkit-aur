@@ -26,5 +26,7 @@ package() {
   deno compile --unstable -A --output pollapo ./cli/pollapo/entrypoint.ts
   deno compile --unstable -A --output pb ./cli/pb/entrypoint.ts
 
+  ls -al
+
   install -Dm755 pollapo ${pkgdir}/usr/bin/pollapo
 }
