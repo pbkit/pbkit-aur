@@ -17,6 +17,7 @@ build() {
   deno compile --unstable -A --output build/pollapo ./cli/pollapo/entrypoint.ts
   deno compile --unstable -A --output build/pb ./cli/pb/entrypoint.ts
 
+  ls -al
   ls -al build
 }
 
