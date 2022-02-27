@@ -28,5 +28,6 @@ package() {
 
   ls -al
 
-  install -Dm755 pollapo ${pkgdir}/usr/bin/pollapo
+  mkdir -p ${pkgdir}/usr/bin
+  mv pollapo ${pkgdir}/usr/bin/pollapo
 }
