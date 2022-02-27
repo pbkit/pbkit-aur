@@ -6,7 +6,7 @@ pkgdesc='Protobuf Dependency Manager'
 arch=('x86_64')
 url='https://github.com/pbkit/pbkit'
 license=('MIT' 'APACHE')
-depends=()
+depends=('gcc-libs')
 makedepends=('git' 'deno')
 source=("pbkit::git://github.com/pbkit/pbkit.git#tag=${pkgver}")
 sha256sums=('SKIP')
