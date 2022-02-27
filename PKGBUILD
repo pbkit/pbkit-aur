@@ -22,9 +22,12 @@ check() {
   cd "$pkgname"
 
   ./pollapo
+  ./pb
 }
 
 package() {
+  cd "$pkgname"
+
   install -Dm 755 pollapo -t "$pkgdir"/usr/bin
   install -Dm 755 pb -t "$pkgdir"/usr/bin
 }
