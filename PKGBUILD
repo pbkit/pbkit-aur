@@ -11,25 +11,20 @@ makedepends=('git' 'deno')
 source=("pbkit::git://github.com/pbkit/pbkit.git#tag=${pkgver}")
 sha256sums=('SKIP')
 
-# build() {
-#   cd ${pkgname}
-#
-#   deno --version
-#
-#   deno compile --unstable -A --output pollapo ./cli/pollapo/entrypoint.ts
-#   deno compile --unstable -A --output pb ./cli/pb/entrypoint.ts
-# }
-
-package() {
+build() {
   cd ${pkgname}
+
+  deno --version
 
   deno compile --unstable -A --output pollapo ./cli/pollapo/entrypoint.ts
   deno compile --unstable -A --output pb ./cli/pb/entrypoint.ts
+}
 
-  ls -l pollapo
+package() {
+  install -Dm755 ${pkgname}/pollapo ${pkgdir}/usr/bin/pollapo
 
-  mkdir -p ${pkgdir}/usr/bin
-  mv pollapo ${pkgdir}/usr/bin/pollapo
+  install -Dm644 ${pkgname}/LICENSE-APACHE ${pkgdir}/usr/share/licenses/${pkgname}/LICENSE-APACHE
+  install -Dm644 ${pkgname}/LICENSE-MIT ${pkgdir}/usr/share/licenses/${pkgname}/LICENSE-MIT
 
   ls -l ${pkgdir}/usr/bin/pollapo
 }
