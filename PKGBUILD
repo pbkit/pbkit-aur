@@ -24,7 +24,7 @@ build() {
 package() {
   ls -al ${pkgname}
 
-  install -dm755 ${pkgdir}/usr/bin
-  mv ${pkgname}/pollapo ${pkgdir}/bin
+  install -dm755 ${pkgdir}/usr/sbin
+  mv ${pkgname}/pollapo ${pkgdir}/usr/sbin
   mv ${pkgname}/pb ${pkgdir}
 }
