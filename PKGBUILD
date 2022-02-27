@@ -12,14 +12,14 @@ source=("pbkit::git://github.com/pbkit/pbkit.git#tag=${pkgver}")
 sha256sums=('SKIP')
 
 build() {
-  cd "$pkgname-$pkgver"
+  cd "$pkgname"
 
   deno compile --unstable -A --output pollapo ./cli/pollapo/entrypoint.ts
   deno compile --unstable -A --output pb ./cli/pb/entrypoint.ts
 }
 
 check() {
-  cd "$pkgname-$pkgver"
+  cd "$pkgname"
 
   ./pollapo
 }
