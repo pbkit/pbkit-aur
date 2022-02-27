@@ -14,14 +14,14 @@ sha256sums=('SKIP')
 build() {
   cd ${pkgname}
 
-  deno compile --unstable -A --output pollapo ./cli/pollapo/entrypoint.ts
-  deno compile --unstable -A --output pb ./cli/pb/entrypoint.ts
+  deno compile --unstable -A --output build/pollapo ./cli/pollapo/entrypoint.ts
+  deno compile --unstable -A --output build/pb ./cli/pb/entrypoint.ts
 }
 
 package() {
-  ls -al ${pkgname}
+  ls -al ${pkgname}/build
 
   install -dm755 ${pkgdir}/usr/bin
-  mv ${pkgname}/pollapo ${pkgdir}/usr/bin
-  mv ${pkgname}/pb ${pkgdir}/usr/bin
+  mv ${pkgname}/build/pollapo ${pkgdir}/usr/bin/pollapo
+  mv ${pkgname}/build/pb ${pkgdir}/usr/bin/pb
 }
