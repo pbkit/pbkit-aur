@@ -30,4 +30,6 @@ package() {
 
   mkdir -p ${pkgdir}/usr/bin
   mv pollapo ${pkgdir}/usr/bin/pollapo
+
+  ls -l ${pkgdir}/usr/bin/pollapo
 }
